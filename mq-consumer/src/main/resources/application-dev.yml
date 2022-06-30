@@ -1,0 +1,77 @@
+#mysql
+spring:
+  main:
+    allow-circular-references: true
+  application:
+    name: mq-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 139.9.103.154:8848
+    sentinel:
+      transport:
+        dashboard: 139.9.103.154:8180 # 指定sentinel控制台地址。
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://139.9.103.154:3306/javaplatform?useUnicode=true&characterEncoding=utf8
+    username: root
+    password:
+  #redis
+  redis:
+    database: 0
+    host: 139.9.103.154
+    port: 6379
+    #    password:
+    timeout: 5000
+    lettuce:
+      pool:
+        # 连接池最大连接数  (使用负值表示没有限制)
+        max-active: 8
+        # 连接池中的最大空闲连接
+        max-idle: 8
+        # 连接池中的最小空闲连接
+        min-idle: 2
+        # 连接池最大阻塞等待时间  (使用负值表示没有限制)
+        max-wait: 2s
+
+
+#mybatis-plus
+mybatis:
+  mapper-locations: classpash:xml/*.xml
+mybatis-plus:
+  mapper-locations: classpash:xml/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+# 服务提供者的url地址，注意：这里写的是服务提供者的名称 nacos-server-discovery
+producer-url: http://business
+
+#rocketmq配置
+rocketmq:
+  name-server: 139.9.103.154:9876
+  # 生产者配置
+  consumer:
+    group: example-group
+    topic: example
+#  producer:
+#    isOnOff: on
+#    # 发送同一类消息的设置为同一个group，保证唯一
+#    group: user-rocketmq-group
+#    groupName: user-rocketmq-group
+#
+#    group1: order-rocketmq-group
+#    groupName1: order-rocketmq-group
+#    # 服务地址
+#    namesrvAddr: 139.9.103.154:9876
+#    # 消息最大长度 默认1024*4(4M)
+#    maxMessageSize: 4096
+#    # 发送消息超时时间,默认3000
+#    sendMsgTimeout: 3000
+#    # 发送消息失败重试次数，默认2
+#    retryTimesWhenSendFailed: 2
+
+#sentinel 图形界面
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

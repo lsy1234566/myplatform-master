@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lsy.plaform.TAActivityMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.lsy.platform.TAActivity">
+        <id column="activity_id" property="activityId" />
+        <result column="parent_id" property="parentId" />
+        <result column="activity_template_id" property="activityTemplateId" />
+        <result column="template_id" property="templateId" />
+        <result column="template_theme_id" property="templateThemeId" />
+        <result column="activity_type" property="activityType" />
+        <result column="activity_subtitle" property="activitySubtitle" />
+        <result column="activity_title" property="activityTitle" />
+        <result column="activity_remark" property="activityRemark" />
+        <result column="start_time" property="startTime" />
+        <result column="end_time" property="endTime" />
+        <result column="register_enable" property="registerEnable" />
+        <result column="register_rule" property="registerRule" />
+        <result column="fans_limit" property="fansLimit" />
+        <result column="distribute_enable" property="distributeEnable" />
+        <result column="show_in_xcx" property="showInXcx" />
+        <result column="show_in_app" property="showInApp" />
+        <result column="show_in_advert" property="showInAdvert" />
+        <result column="use_scene" property="useScene" />
+        <result column="activity_state" property="activityState" />
+        <result column="activity_addr" property="activityAddr" />
+        <result column="activity_pic" property="activityPic" />
+        <result column="title_pic" property="titlePic" />
+        <result column="max_amount" property="maxAmount" />
+        <result column="sponsor" property="sponsor" />
+        <result column="phone" property="phone" />
+        <result column="examine_state" property="examineState" />
+        <result column="examine_remark" property="examineRemark" />
+        <result column="examine_time" property="examineTime" />
+        <result column="qrcode_url" property="qrcodeUrl" />
+        <result column="reward_grant_mode" property="rewardGrantMode" />
+        <result column="reward_condition_id" property="rewardConditionId" />
+        <result column="reward_condition_code" property="rewardConditionCode" />
+        <result column="reward_repeat" property="rewardRepeat" />
+        <result column="award_integral_rule" property="awardIntegralRule" />
+        <result column="prize_probability_mode" property="prizeProbabilityMode" />
+        <result column="max_prize_probability" property="maxPrizeProbability" />
+        <result column="cancel_unit" property="cancelUnit" />
+        <result column="owner_type" property="ownerType" />
+        <result column="owner_id" property="ownerId" />
+        <result column="owner_proxy_id_1" property="ownerProxyId1" />
+        <result column="owner_proxy_id_2" property="ownerProxyId2" />
+        <result column="owner_proxy_id_3" property="ownerProxyId3" />
+        <result column="owner_proxy_id_4" property="ownerProxyId4" />
+        <result column="platform_id" property="platformId" />
+        <result column="platform_type" property="platformType" />
+        <result column="platform_proxy_id" property="platformProxyId" />
+        <result column="c_time" property="cTime" />
+        <result column="u_time" property="uTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        activity_id, parent_id, activity_template_id, template_id, template_theme_id, activity_type, activity_subtitle, activity_title, activity_remark, start_time, end_time, register_enable, register_rule, fans_limit, distribute_enable, show_in_xcx, show_in_app, show_in_advert, use_scene, activity_state, activity_addr, activity_pic, title_pic, max_amount, sponsor, phone, examine_state, examine_remark, examine_time, qrcode_url, reward_grant_mode, reward_condition_id, reward_condition_code, reward_repeat, award_integral_rule, prize_probability_mode, max_prize_probability, cancel_unit, owner_type, owner_id, owner_proxy_id_1, owner_proxy_id_2, owner_proxy_id_3, owner_proxy_id_4, platform_id, platform_type, platform_proxy_id, c_time, u_time
+    </sql>
+
+</mapper>
